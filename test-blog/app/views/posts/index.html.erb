@@ -1,0 +1,16 @@
+
+<h1>All the posts</h1>
+<ul>
+  <%@posts.each do |post|%>
+    <li><%= link_to post.title, post_path(post) %></li>
+  <%end%>
+</ul>
+
+<%if flash[:notice] %>
+  <div><%= flash[:notice]%></div>
+<%end%>
+
+<%= link_to 'make the new post confucius say...', new_post_path %>
+
+<%= link_to 'log the heck in', login_path %>
+<%= link_to 'logout', logout_path, method: :delete %>
